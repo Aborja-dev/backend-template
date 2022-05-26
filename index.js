@@ -3,15 +3,11 @@ require('./mongo')
 
 const express = require('express')
 const cors = require('cors')
-const notesRouter = require('./controllers/notes')
-const usersRouter = require('./controllers/users')
-const loginRouter = require('./controllers/login')
+
 const app = express()
 app.use(cors())
 app.use(express.json())
-app.use('/api/notes', notesRouter)
-app.use('/api/users', usersRouter)
-app.use('/api/login', loginRouter)
+
 app.use((req,res)=>{
    return res.status(404).end()
 })

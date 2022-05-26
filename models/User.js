@@ -4,10 +4,6 @@ const userSchema = new mongoose.Schema({
    name: String,
    username: String,
    passwordHash: String,
-   notes: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Note'
-   }]
 })
 
 userSchema.set('toJSON',{
